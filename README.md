@@ -1,2 +1,9 @@
-# Ejercicios-en-Java
-Ejercicios java que se ha  ido realizando a lo largo de de DAM.
+# Ejercicios Java
+Este repositorio contiene los ejercicios básicos que estoy desarrollando mientras aprendo Java en DAM.
+
+## Contenido
+- Ejercicios de operadores básicos.
+- Condicionales y estructuras de control.
+- Bucles.
+- Arrays.
+- Arrays complejos y aplicados a ejemplos reales.
