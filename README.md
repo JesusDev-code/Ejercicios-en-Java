@@ -7,3 +7,4 @@ Este repositorio contiene los ejercicios básicos que estoy desarrollando mientr
 - Bucles.
 - Arrays.
 - Arrays complejos y aplicados a ejemplos reales.
+- Cadena de caracteres
