@@ -8,3 +8,4 @@ Este repositorio contiene los ejercicios básicos que estoy desarrollando mientr
 - Arrays.
 - Arrays complejos y aplicados a ejemplos reales.
 - Cadena de caracteres
+- Sopa de letras
