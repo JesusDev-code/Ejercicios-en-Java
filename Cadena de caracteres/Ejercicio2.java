@@ -1,28 +1,22 @@
-package com.mycompany.ejerciciounidad6repaso;
+package com.mycompany.repasocadenadecaracteres;
+/* Author jesus*/
 import java.util.Scanner;
-/**
- *
- * @author Jesus
- */
 public class Ejercicio2 {
-    static public void main(String[] args){
-        /*Actividad 2.
+    /*Actividad 2.
 Introducir por teclado dos frases e indicar cuál de ellas es la más corta, es decir, la que contiene
 menos caracteres.*/
-        //valores
-        String frase;
-        String frase2;
-        //Adquisucuón de datos
-        Scanner sc=new Scanner(System.in);
-        System.out.println("Escriba una frase: ");
-        frase =sc.nextLine();
-        System.out.println("Escriba una segunda frase: ");
+    static public void main(String[] args){
+        Scanner sc=new Scanner(System.in);    
+        String frase,frase2;
+        System.out.println("Dime una frase: ");
+        frase=sc.nextLine();
+        System.out.println("Dime una segunda frase: ");
         frase2=sc.nextLine();
         if(frase.length()>frase2.length()){
-            System.out.println("Parece que la frase: "+frase2+" es la más corta ");
+            System.out.println("La frase: -"+frase2+" - es más corta");
         }
         else{
-            System.out.println("Parece que la frase: "+frase+" es la más corta");
+            System.out.println("La frase: -"+frase+ " - es más corta");
         }
     }
 }

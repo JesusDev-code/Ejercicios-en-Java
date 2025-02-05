@@ -1,50 +1,47 @@
-package com.mycompany.ejerciciounidad6repaso;
+package com.mycompany.repasocadenadecaracteres;
+/* Author jesus*/
 import java.util.Random;
 import java.util.Scanner;
-/**
- *
- * @author Jesus
- */
 public class Ejercicio15 {
-    static public void main(String[] args){
-        /*Actividad 15.
+    /*Actividad 15.
 Modificar la actividad 14 para que el programa indique al jugador 2 cuántas letras coinciden (son
 iguales y están en la misma posición) entre el texto introducido por él y el original.*/
-        //Valores
-        String palabra,palabra2;
-        char[]palabrah;
-        char[]palabrah2;
-        char temp;
-        int x,contador=0;
+    static public void main(String[] args){
+                //Valores
+        String palabra,respuesta;
         Random random=new Random();
+        char[] letras;
+        int x,contador=0;
+        char temp;
         //Adquisición de datos
         Scanner sc=new Scanner(System.in);
-        System.out.println("Diga una palabra que el segundo jugador tendrá que adivinar: ");
-        palabra =sc.nextLine();
-        palabra=palabra.strip();
-        palabrah=palabra.toCharArray();
-        for(int i=0;i<palabrah.length;i++){
-            x=random.nextInt(palabrah.length);
-            temp=palabrah[i];
-            palabrah[i]=palabrah[x];
-            palabrah[x]=temp;
+        System.out.println("Introduce una palabra: ");
+        palabra=sc.nextLine();
+        letras=palabra.toCharArray();
+        //desordenar palabra
+        for(int i=0;i<letras.length;i++){
+            x=random.nextInt(letras.length);
+            temp=letras[i];
+            letras[i]=letras[x];
+            letras[x]=temp;
         }
-        do{
         System.out.println("Adivina la palabra: ");
-        System.out.println(palabrah);
-        palabra2=sc.nextLine();
-        if(palabra2.equals(palabra)){
-            System.out.println("Felicidades, ha acertado");
-        }
-        else{
-            for(int i=0;i<palabra.length();i++){
-                if(palabra2.charAt(i)==palabra.charAt(i)){
-                    contador++;
+        System.out.println(letras);
+        System.out.print("Respuesta: ");
+        respuesta=sc.nextLine();
+        while(!respuesta.equalsIgnoreCase(palabra)){
+                    //Mostrar el anagrama           
+                    for(int i=0;i<letras.length;i++){
+                        if(respuesta.charAt(i)==palabra.charAt(i)){
+                            contador++;
+                        }
+                    }
+                    System.out.println("Vaya no has acertado,de las palabras que has colocado ha coincididio "+contador+" letras, intentalo"
+                            + "de nuevo");  
+                    contador=0;
+                    System.out.println("¿que palabra quieres introducir?");
+                    respuesta=sc.nextLine();    
                 }
-            }
-            System.out.println("Vaya, no ha acertado, aunque de la palabra que has escrito coinciden "+contador+ " palabras");    
-            }
-        contador=0;
-        }while (!palabra2.equals(palabra));
+                    System.out.println("Felicidades!");
     }
 }

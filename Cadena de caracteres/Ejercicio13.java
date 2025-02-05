@@ -1,12 +1,7 @@
-package com.mycompany.ejerciciounidad6repaso;
+package com.mycompany.repasocadenadecaracteres;
 import java.util.Scanner;
-/**
- *
- * @author Jesus
- */
 public class Ejercicio13 {
-    static public void main(String[] args){
-        /*Actividad 13.
+    /*Actividad 13.
 Diseñar un algoritmo que lea del teclado una frase e indique, para cada letra que aparece en la
 frase, cuántas veces se repite.
 Se consideran iguales las letras mayúsculas y las minúsculas para realizar la cuenta. Un ejemplo
@@ -16,28 +11,29 @@ Resultado:
 ‘a’ = 4 veces.
 ‘c’ = 1 vez.
 ‘d’ = 1 vez.
-‘e’ = 2 veces.
-...*/
-     //Valores
-     String frase;
-     int[] repeticion=new int[26];
-     char letra;
-     //Adquisición de datos
-     Scanner sc=new Scanner(System.in);
-     System.out.println("Introduzca una frase: ");
-     frase=sc.nextLine();
-     frase=frase.toLowerCase();
-     for(int i=0;i<frase.length();i++){
-         letra=frase.charAt(i);
-         if(letra>='a' && letra<='z'){
-             repeticion[letra-'a']++;
-         }
-     }
-     for(int i=0;i<repeticion.length;i++){
-         if(repeticion[i]>0){
-             letra=(char)(i+'a');
-             System.out.println(letra+" se ha repetido "+repeticion[i]+" veces");
-         }
-     }
+‘e’ = 2 veces.*/
+    static public void main(String[] args){
+        //Valores
+        String frase;
+        int [] conteoLetras=new int[26];
+        char caracter;
+        int indice;
+        //Adquisisión de datos
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Dame una frase: ");
+        frase=sc.nextLine().toLowerCase();
+        for(int i=0;i<frase.length();i++){
+            caracter=frase.charAt(i);
+            if(caracter>='a' && caracter<='z'){
+                indice=caracter-'a';
+                conteoLetras[indice]++;
+            }
+        }
+        System.out.println("Frecuencia de letras:");
+        for (int i = 0; i < 26; i++) {
+            if (conteoLetras[i] > 0) { // Solo imprimir letras que aparecen
+                System.out.println("'" + (char) (i + 'a') + "' = " + conteoLetras[i] + " veces.");
+            }
+        }
     }
 }

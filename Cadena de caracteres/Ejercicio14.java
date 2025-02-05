@@ -1,47 +1,45 @@
-package com.mycompany.ejerciciounidad6repaso;
+package com.mycompany.repasocadenadecaracteres;
+/* Author jesus*/
 import java.util.Scanner;
 import java.util.Random;
-/**
- *
- * @author Jesus
- */
 public class Ejercicio14 {
-    static public void main(String[] args){
-        /*Actividad 14.
+    /*Actividad 14.
 Implementar el juego del anagrama, que consiste en que un jugador escribe una palabra y la
 aplicación muestra un anagrama (cambio del orden de los caracteres) generado al azar.
 A continuación, otro jugador tiene que acertar cual es el texto original.
 La aplicación no debe permitir que el texto introducido por el jugador 1 sea la cadena vacía.
 Por ejemplo, si el jugador 1 introduce “teclado”, la aplicación muestra como pista un anagrama
 al azar como, por ejemplo: “etcloda”.*/
+    static public void main(String[] args){
         //Valores
-        String palabra,palabra2;
-        char[]palabrah;
-        char temp;
-        int x;
+        String palabra,respuesta;
         Random random=new Random();
+        char[] letras;
+        int x;
+        char temp;
         //Adquisición de datos
         Scanner sc=new Scanner(System.in);
-        System.out.println("Diga una palabra que el segundo jugador tendrá que adivinar: ");
-        palabra =sc.nextLine();
-        palabra=palabra.strip();
-        palabrah=palabra.toCharArray();
-        for(int i=0;i<palabrah.length;i++){
-            x=random.nextInt(palabrah.length);
-            temp=palabrah[i];
-            palabrah[i]=palabrah[x];
-            palabrah[x]=temp;
+        System.out.println("Introduce una palabra: ");
+        palabra=sc.nextLine();
+        letras=palabra.toCharArray();
+        //desordenar palabra
+        for(int i=0;i<letras.length;i++){
+            x=random.nextInt(letras.length);
+            temp=letras[i];
+            letras[i]=letras[x];
+            letras[x]=temp;
         }
-        do{
         System.out.println("Adivina la palabra: ");
-        System.out.println(palabrah);
-        palabra2=sc.nextLine();
-        if(palabra2.equals(palabra)){
-            System.out.println("Felicidades, ha acertado");
+        System.out.println(letras);
+        
+        System.out.print("Respuesta: ");
+        respuesta=sc.nextLine();
+        if(respuesta.equalsIgnoreCase(palabra)){
+            System.out.println("FelicidadeS! has acertado!");
         }
         else{
-            System.out.println("Vaya, no ha acertado");
+            System.out.println("Vaya, no has acertado");
         }
-        }while(!palabra2.equals(palabra));      
+        
     }
 }

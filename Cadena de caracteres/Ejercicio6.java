@@ -1,33 +1,30 @@
-package com.mycompany.ejerciciounidad6repaso;
+package com.mycompany.repasocadenadecaracteres;
+/* Author jesus*/
 import java.util.Scanner;
-/**
- *
- * @author Jesus
- */
 public class Ejercicio6 {
-    static public void main(String[] args){
-        /*Actividad 6.
+    /*Actividad 6.
 Escribir un programa que pida el nombre completo al usuario y lo muestre sin vocales
 (mayúsculas, minúsculas y acentuadas). Por ejemplo: “Álvaro Pérez” se mostrará “lvr Prz”.*/
+    static public void main(String [] args){
         //Valores
-        String nombre;
-        String nombreh="";
-        char letra;
+        String nombre,nombres=" ";
+        char[] nombreh;
         //Adquisición de datos
-        Scanner sc=new Scanner(System.in);
-        System.out.println("Ponga su nombre completo: ");
-        nombre=sc.nextLine();
+        Scanner sc=new Scanner (System.in);
+        System.out.println("Introduzca su nombre completo: ");
+        nombre=sc.nextLine().strip();
+        nombreh=nombre.toCharArray();  
         for(int i=0;i<nombre.length();i++){
-            letra=nombre.charAt(i);
-            if (letra != 'a' && letra != 'e' && letra != 'i' && letra != 'o' && letra != 'u' && 
-                letra != 'á' && letra != 'é' && letra != 'í' && letra != 'ó' && letra != 'ú' &&
-                letra != 'A' && letra != 'E' && letra != 'I' && letra != 'O' && letra != 'U' &&
-                letra != 'Á' && letra != 'É' && letra != 'Í' && letra != 'Ó' && letra != 'Ú') {
-                nombreh += letra;
+            if(nombre.charAt(i)=='a'||nombre.charAt(i)=='e'||nombre.charAt(i)=='i'||nombre.charAt(i)=='o'||nombre.charAt(i)=='u'||
+                    nombre.charAt(i)=='A'||nombre.charAt(i)=='E'||nombre.charAt(i)=='I'||nombre.charAt(i)=='O'||
+                    nombre.charAt(i)=='U'||nombre.charAt(i)=='á'||nombre.charAt(i)=='é'||nombre.charAt(i)=='ì'||
+                    nombre.charAt(i)=='ò'||nombre.charAt(i)=='u' ){
+               nombres+="";
             }
-            else{              
-            }           
+            else{
+                nombres+=nombreh[i];
+            }       
         }
-        System.out.println(nombreh);
+        System.out.println(nombres);
     }
 }
