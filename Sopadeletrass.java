@@ -2,7 +2,7 @@ package com.mycompany.sopadeletrass;
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Random;
-//Jesus y natalia
+//Jesus 
 public class Sopadeletrass {
     // Variables globales
     static int intentos = 0;
